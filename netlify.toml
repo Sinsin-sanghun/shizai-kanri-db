@@ -6,3 +6,10 @@
       from = "/api/chat"
         to = "/.netlify/functions/chat"
           status = 200
+
+          # Proxy all other requests to the old deploy that has the static files
+          [[redirects]]
+            from = "/*"
+              to = "https://69c8072f63077478914b6073--shizai-kanri-db.netlify.app/:splat"
+                status = 200
+                  force = false
